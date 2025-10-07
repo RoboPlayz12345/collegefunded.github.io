@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FAFSA - College Funded</title>
+  <meta name="description" content="Understand the FAFSA process and learn how to appeal your financial aid package with our comprehensive guide."/>
+  <meta name="keywords" content="college funding, financial aid, scholarships, FAFSA, grants, student loans, college money"/>
+  <meta name="author" content="College Funded">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="College Funded">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <style>
+    .section {
+      padding: 40px 0;
+    }
+    .grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .card {
+      flex: 1 1 45%;
+      padding: 30px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      background-color: #f9f9f9;
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+    }
+    .loan-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    .loan-table th, .loan-table td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+    .highlight-section {
+      background-color: #e6f7ff;
+      border-left: 6px solid #007bff;
+      padding: 30px;
+      border-radius: 8px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    .dropdown-section {
+      margin: 20px 0;
+    }
+    .dropdown-header {
+      background: #1565c0;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2em;
+      transition: background-color 0.3s;
+    }
+    .dropdown-header:hover {
+      background: #1976d2;
+    }
+    .dropdown-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 0 0 8px 8px;
+      margin-top: -8px;
+      background: white;
+    }
+    .dropdown-section.active .dropdown-content {
+      display: block;
+    }
+    .dropdown-header:after {
+      content: '▼';
+      font-size: 0.8em;
+      transition: transform 0.3s;
+    }
+    .dropdown-section.active .dropdown-header:after {
+      transform: rotate(180deg);
+    }
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      z-index: 1000;
+      top: 100%;
+      left: 0;
+    }
+    .nav-dropdown.open .nav-dropdown-content {
+      display: block;
+    }
+    .nav-dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: all 0.2s;
+    }
+    .nav-dropdown-content a:hover {
+      background-color: #f1f1f1;
+      color: #1565c0;
+      padding-left: 20px;
+    }
+    @media (max-width: 768px) {
+      .grid {
+        gap: 20px;
+      }
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header fade-in fade-in-1" role="banner">
+    <div class="container">
+      <div class="brand">
+        <div class="logo">
+          <img src="images/logo.png" alt="College Funded logo" style="height: 150px;"/>
+        </div>
+        <div></div>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle menu">☰ Menu</button>
+      <nav aria-label="Main navigation" class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="mission.html">Mission</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="" class="dropdown-toggle">FAFSA</a>
+          <div class="nav-dropdown-content">
+            <a href="fafsa.html#about-fafsa">About FAFSA</a>
+            <a href="fafsa.html#appealing-fafsa">Appealing FAFSA</a>
+          </div>
+        </div>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="resources.html">Extra Resources</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="section fade-in fade-in-3">
+      <div class="container">
+        <h1 class="fade-in fade-in-3">Understanding & Appealing FAFSA</h1>
+        <div id="about-fafsa" style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; scroll-margin-top: 100px;">
+          <h2 style="color: #1565c0; margin-top: 0;">About FAFSA</h2>
+          <p style="font-size: 1.1em;" class="fade-in fade-in-4">
+            The <strong>Free Application for Federal Student Aid (FAFSA)</strong> is your first step towards college financial assistance. Understanding how it works is crucial for maximizing your aid.
+          </p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>FAFSA Basics</h3>
+            <ul style="padding-left: 20px;">
+              <li><strong>What It Is:</strong> A form that determines your eligibility for federal financial aid</li>
+              <li><strong>When to Submit:</strong> Opens October 1st each year</li>
+              <li><strong>Cost:</strong> Always FREE - never pay to submit</li>
+              <li><strong>Required Documents:</strong> Tax returns, bank statements, asset information</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Key Requirements</h3>
+            <ul style="padding-left: 20px;">
+              <li><strong>Citizenship:</strong> US Citizen or eligible non-citizen</li>
+              <li><strong>Academic:</strong> High school diploma or equivalent</li>
+              <li><strong>Registration:</strong> Males must be registered with Selective Service</li>
+              <li><strong>Valid SSN:</strong> Must have valid Social Security Number</li>
+            </ul>
+          </article>
+        </div>
+        <div style="background: #e3f2fd; padding: 25px; border-radius: 8px; margin-top: 40px;">
+          <h2 style="color: #1565c0; margin-top: 0;">Understanding the Process</h2>
+          <div class="grid" style="margin-top: 20px;">
+            <article class="card">
+              <h3>How FAFSA Calculates Need</h3>
+              <ul style="padding-left: 20px;">
+                <li><strong>Cost of Attendance (COA)</strong> - What college will cost</li>
+                <li><strong>Expected Family Contribution (EFC)</strong> - What your family can pay</li>
+                <li><strong>Financial Need = COA - EFC</strong></li>
+                <li>Uses "prior-prior" year tax data</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>After Submission</h3>
+              <ul style="padding-left: 20px;">
+                <li><strong>Processing Time:</strong> 3-5 business days</li>
+                <li><strong>SAR Review:</strong> Check Student Aid Report for errors</li>
+                <li><strong>School Access:</strong> Your chosen schools receive the data</li>
+                <li><strong>Aid Packages:</strong> Schools create personalized offers</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+        <div id="appealing-fafsa" style="margin-top: 40px; scroll-margin-top: 100px;">
+          <h2>Appealing Your FAFSA</h2>
+          <div class="grid">
+            <article class="card" style="background-color: #fff3cd; border-color: #ffeeba;">
+              <h3>When to Appeal</h3>
+              <ul style="padding-left: 20px;">
+                <li><strong>Special Circumstances:</strong>
+                  <ul>
+                    <li>Job loss or income reduction</li>
+                    <li>Medical expenses not covered by insurance</li>
+                    <li>Parent divorce or separation</li>
+                    <li>Death of primary wage earner</li>
+                  </ul>
+                </li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Appeal Process</h3>
+              <ol style="padding-left: 20px;">
+                <li><strong>Contact Financial Aid Office:</strong> Each school has their own process</li>
+                <li><strong>Gather Documentation:</strong> Proof of change in circumstances</li>
+                <li><strong>Write Appeal Letter:</strong> Clear, concise explanation</li>
+                <li><strong>Submit Additional Forms:</strong> As required by the school</li>
+                <li><strong>Follow Up:</strong> Monitor the status of your appeal</li>
+              </ol>
+            </article>
+          </div>
+        </div>
+        <div class="highlight-section">
+          <h2>Appealing Your Aid (Appealing Aid)</h2>
+          <p style="margin-bottom: 20px;">If your aid package doesn't reflect your current financial reality because the FAFSA uses older data, you can appeal directly to the Financial Aid office at your University/College. This is for <strong>EXCESS Educational Expenses</strong> or financial <strong>change in income</strong>.</p>
+          <p style="font-weight: bold;">Common Appeal Circumstances:</p>
+          <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 20px;">
+            <li>Job loss or substantial change in income.</li>
+            <li>Major medical bills or high unreimbursed expenses.</li>
+            <li>Death or divorce of a parent/breadwinner.</li>
+          </ul>
+          <h4 style="margin-top: 20px;">The 3-Step Appeal Process:</h4>
+          <ol style="padding-left: 20px;">
+            <li><strong>Step 1:</strong> Ask for the official appeal process (they have an official form/policy).</li>
+            <li><strong>Step 2:</strong> Gather <strong>proof</strong> (documentation) of the change in circumstances.</li>
+            <li><strong>Step 3:</strong> Write an appeal letter or complete the university's form and <strong>SUBMIT</strong>.</li>
+          </ol>
+        </div>
+        <div class="highlight-section" style="margin-top: 40px; background-color: #e3f2fd;">
+          <h2>Important Deadlines</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div>
+              <h4 style="color: #1565c0; margin-top: 0;">📅 Federal Timeline</h4>
+              <ul style="list-style: none; padding-left: 0;">
+                <li><strong>Opens:</strong> October 1st</li>
+                <li><strong>Closes:</strong> June 30th</li>
+                <li><strong>Corrections Due:</strong> September 15th</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="color: #1565c0; margin-top: 0;">🎯 Best Practices</h4>
+              <ul style="list-style: none; padding-left: 0;">
+                <li>Submit as early as possible</li>
+                <li>Don't wait for tax returns - estimate</li>
+                <li>Check school-specific deadlines</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div>© <span id="year-fafsa"></span> College Funded — nonprofit advice. All rights reserved.</div>
+    </div>
+  </footer>
+ <script>
+  // Update year
+  const yearElement = document.querySelector('[id^="year-"]');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('show');
+    });
+  }
+
+  // Dropdown toggle for FAFSA menu
+  document.querySelectorAll('.dropdown-toggle').forEach(function(toggle){
+    toggle.addEventListener('click', function(e){
+      e.preventDefault();
+      const parent = this.parentElement;
+      document.querySelectorAll('.nav-dropdown').forEach(d => {
+        if (d !== parent) d.classList.remove('open');
+      });
+      parent.classList.toggle('open');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e){
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
+</script>
+</body>
+</html>

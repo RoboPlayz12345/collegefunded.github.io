@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mission - College Funded</title>
+  <meta name="description" content="Learn about College Funded's mission to make college affordable and accessible for all students through financial aid guidance."/>  
+  <meta name="keywords" content="college funding, financial aid, scholarships, FAFSA, grants, student loans, college money"/>
+  <meta name="author" content="College Funded">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="College Funded">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+  <header class="site-header fade-in fade-in-1">
+    <div class="container">
+      <div class="brand">
+        <div class="logo">
+          <img src="images/logo.png" alt="College Funded logo" style="height: 150px;"/>
+        </div>
+        <div></div>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle menu">☰ Menu</button>
+      <nav aria-label="Main navigation" class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="mission.html">Mission</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="" class="dropdown-toggle">FAFSA</a>
+          <div class="nav-dropdown-content">
+            <a href="fafsa.html#about-fafsa">About FAFSA</a>
+            <a href="fafsa.html#appealing-fafsa">Appealing FAFSA</a>
+          </div>
+        </div>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="resources.html">Extra Resources</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="section fade-in fade-in-2">
+      <div class="inner container">
+        <h2>Our Mission</h2>
+        <p class="muted">Hey there! 👋 We're here to help you figure out this whole college money thing!</p>
+        
+        <div class="content-box">
+          <h3>What We're All About</h3>
+          <p>OK, so college is super expensive (like, seriously expensive 😱), and that's pretty scary when you're trying to plan your future. But don't worry - we've got your back! Here's what we do:</p>
+          
+          <ul class="mission-list">
+            <li>💡 Help you understand all that confusing financial aid stuff in simple words</li>
+            <li>🎯 Show you where to find awesome scholarships (free money, anyone?)</li>
+            <li>📝 Walk you through the FAFSA form step by step (it's not as scary as it looks!)</li>
+            <li>🤝 Connect you with people who can help you get into your dream school</li>
+          </ul>
+
+          <h3>Why We Care</h3>
+          <p>Real talk - we were in your shoes once! We know how stressful it is to think about paying for college. That's why we created this website - to make things easier for students like you. No fancy complicated words, just straight-up help to get you where you want to go! 💪</p>
+
+          <div class="mission-quote">
+            <p>"Everyone deserves a chance to go to college, no matter what's in their wallet!"</p>
+          </div>
+
+          <h3>What's In It For You?</h3>
+          <p>We're here to be your buddy in this college journey! We'll help you:</p>
+          <ul class="mission-list">
+            <li>🔍 Find money for college that you didn't even know existed</li>
+            <li>📚 Learn about different ways to pay for school</li>
+            <li>🎓 Make your college dreams actually happen!</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer fade-in fade-in-6">
+    <div class="container">© <span id="year-mission"></span> College Funded</div>
+  </footer>
+<script>
+  // Update year
+  const yearElement = document.querySelector('[id^="year-"]');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('show');
+    });
+  }
+
+  // Dropdown toggle for FAFSA menu
+  document.querySelectorAll('.dropdown-toggle').forEach(function(toggle){
+    toggle.addEventListener('click', function(e){
+      e.preventDefault();
+      const parent = this.parentElement;
+      document.querySelectorAll('.nav-dropdown').forEach(d => {
+        if (d !== parent) d.classList.remove('open');
+      });
+      parent.classList.toggle('open');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e){
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
+</script>
+
+</body>
+
+</html>
