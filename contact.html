@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us - College Funded</title>
+  <meta name="description" content="Contact College Funding for volunteer info, partnerships, or personalized guidance."/>
+  <meta name="keywords" content="college funding, financial aid, scholarships, FAFSA, grants, student loans, college money"/>
+  <meta name="author" content="College Funded">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="College Funded">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+  <header class="site-header fade-in fade-in-1">
+    <div class="container">
+      <div class="brand">
+        <div class="logo">
+          <img src="images/logo.png" alt="College Funded logo" style="height: 150px;"/>
+        </div>
+        <div>
+        </div>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle menu">☰ Menu</button>
+      <nav aria-label="Main navigation" class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="mission.html">Mission</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="" class="dropdown-toggle">FAFSA</a>
+          <div class="nav-dropdown-content">
+            <a href="fafsa.html#about-fafsa">About FAFSA</a>
+            <a href="fafsa.html#appealing-fafsa">Appealing FAFSA</a>
+          </div>
+        </div>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="resources.html">Extra Resources</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section fade-in fade-in-3">
+      <div class="inner container">
+        <h2>Contact Us</h2>
+        <p class="muted">Questions? Volunteer interest? Partnership inquiries? Fill the form below or email us directly.</p>
+
+        <form class="form" id="contactForm" method="POST" action="https://formspree.io/f/xvgbvqpe">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" placeholder="Volunteer, partnership, question..." required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us more..." rows="6"></textarea>
+
+          <!-- Hidden honeypot to reduce spam -->
+          <div style="display:none">
+            <label>Leave empty</label>
+            <input name="honeypot" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+        <p id="contactStatus" style="margin-top:12px;display:none;color:green">Thanks — your message has been sent.</p>
+
+        <div style="margin-top:22px">
+          <h3>Direct contact</h3>
+          <p class="muted">Email: <a href="mailto:collegefundedinfo@gmail.com">collegefundedinfo@gmail.com</a></p>
+          <p class="muted">Mailing address or office hours</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year-contact"></span> College Funded</div>
+  </footer>
+
+<script>
+  // Update year
+  const yearElement = document.querySelector('[id^="year-"]');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('show');
+    });
+  }
+
+  // Dropdown toggle for FAFSA menu
+  document.querySelectorAll('.dropdown-toggle').forEach(function(toggle){
+    toggle.addEventListener('click', function(e){
+      e.preventDefault();
+      const parent = this.parentElement;
+      document.querySelectorAll('.nav-dropdown').forEach(d => {
+        if (d !== parent) d.classList.remove('open');
+      });
+      parent.classList.toggle('open');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e){
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
+</script>
+</body>
+</html>
